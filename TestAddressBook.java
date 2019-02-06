@@ -1,46 +1,58 @@
 /**
- This contains a bunch of test commands to test each of the methods in "AddressBook."
+ This project shows the use of Arraylist to store objects
+ The requirements did not ask for validation and being stuck for time on this week I have not included any.
+ Though there is no validation of the input text I have made sure it is looking for the correct data in the object.
+ I have also not caught any outOfBounds exceptions or incorrect returns that will arise when trying to search for non existent data.
+ 0.2 update adds sorting.
  @author Joshua Button
- @version 0.1
- @date 16/01/2019
+ @version 0.2
+ @date 04/02/2019
  @website www.joshuabutton.co.uk
  */
 
-package addressbook;
-
 public class TestAddressBook {
 
-	public static void main(String[] args) {
-		AddressBookInterface b = new AddressBook();
-		Contact a = new Contact("Homer", "Simpson", "+158623496", "homer@fox.com");
-		Contact c = new Contact("Peter", "Griffin", "+1588888", "peter@fox.com");
-		Contact d = new Contact("Walter", "White", "+15111", "heisenberg@gmail.com");
-		Contact e = new Contact("Sheldon", "Cooper", "+14444", "cooper@caltech.edu");
-		b.add(a);b.add(c);b.add(d);b.add(e);
+    public static void main(String[] args) {
+        AddressBookInterface addressBook = new AddressBook();
+        Contact a = new Contact("Homer", "Simpson", "+158623496", "homer@fox.com");
+        Contact c = new Contact("Peter", "Griffin", "+152343496", "peter@fox.com");
+        Contact b = new Contact("James", "Griffin", "+152343497", "james@fox.com");
+        Contact d = new Contact("Walter", "White", "+117323496", "heisenberg@gmail.com");
+        Contact e = new Contact("Sheldon", "Cooper", "+123423496", "cooper@caltech.edu");
+        addressBook.add(a);addressBook.add(c);addressBook.add(d);addressBook.add(e);addressBook.add(b);
 
-		System.out.println("print \"a\": ");
-		System.out.println(a);
-		System.out.println("-----");
-		System.out.println("print \"b.list()\": ");
-		System.out.println(b.list());
-		System.out.println("-----");
-		System.out.println("b.delete(\"Sheldon\")");
-		b.delete("Sheldon");
-		System.out.println("-----");
-		System.out.println("print \"b.list()\": ");
-		System.out.println(b.list());
-		System.out.println("-----");
-		System.out.println("print \"b.search(\"Peter\")\": ");
-		System.out.println(b.search("Peter"));
-		System.out.println("-----");
-		System.out.println("print \"b.searchAll(\"homer@fox.com\")\": ");
-		System.out.println(b.searchAll("homer@fox.com"));
-		System.out.println("-----");
-		System.out.println("print \"b.getContact(\"+15111\")\": ");
-		System.out.println(b.getContact("+15111"));
-		System.out.println("-----");
-		System.out.println("End");
-		
-	}
+        System.out.println("print \"a\": ");
+        System.out.println(a);
+        System.out.println("-----");
+        System.out.println("print \"addressBook.list()\": ");
+        System.out.println(addressBook.list());
+        System.out.println("-----");
+        System.out.println("addressBook.delete(\"Sheldon\")");
+        addressBook.delete("Sheldon");
+        System.out.println("-----");
+        System.out.println("print \"addressBook.list()\": ");
+        System.out.println(addressBook.list());
+        System.out.println("-----");
+        System.out.println("print \"addressBook.search(\"Peter\")\": ");
+        System.out.println(addressBook.search("Peter"));
+        System.out.println("-----");
+        System.out.println("print \"addressBook.searchAll(\"homer@fox.com\")\": ");
+        System.out.println(addressBook.searchAll("homer@fox.com"));
+        System.out.println("-----");
+        System.out.println("print \"addressBook.getContact(\"+15111\")\": ");
+        System.out.println(addressBook.getContact("+15111"));
+        System.out.println("-----");
+        System.out.println("print \"addressBook.list()\": ");
+        System.out.println(addressBook.list());
+        System.out.println("-----");
+        System.out.println("print \"addressBook.sortNamesAlphabetically()\": ");
+        System.out.println(((AddressBook) addressBook).sortNamesAlphabetically());
+        System.out.println("-----");
+        System.out.println("print \"addressBook.sortNumbersNumerically()\": ");
+        System.out.println(((AddressBook) addressBook).sortNumbersNumerically());
+        System.out.println("-----");
+        System.out.println("End");
+
+    }
 
 }

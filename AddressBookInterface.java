@@ -1,5 +1,3 @@
-package addressbook;
-
 public interface AddressBookInterface {
 
 	Contact getContact(String number);

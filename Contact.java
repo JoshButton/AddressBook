@@ -1,4 +1,4 @@
-package addressbook;
+import java.util.Comparator;
 
 public class Contact {
 	private String name;
@@ -43,5 +43,24 @@ public class Contact {
 	public void setEmail(String email) {
 		this.email=email;
 	}
+
+	public static Comparator<Contact> contactNameComparator = new Comparator<Contact>() {
+
+		public int compare(Contact c1, Contact c2) {
+			int comp = c1.surname.compareTo(c2.surname);
+			if(comp!=0)
+				return comp;
+			else
+				return c1.name.compareTo(c2.name);
+		}};
+
+	public static Comparator<Contact> contactPhoneComparator = new Comparator<Contact>() {
+
+		public int compare(Contact c1, Contact c2) {
+
+			int phoneno1 = Integer.parseInt(c1.phone.substring(1));
+			int phoneno2 = Integer.parseInt(c2.phone.substring(1));
+			return phoneno1-phoneno2;
+		}};
 	
 }

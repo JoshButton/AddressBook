@@ -15,3 +15,7 @@ Contact objects are stored in an ArrayList where they can be put through an iter
 The requirements did not ask for validation and being stuck for time on this week I have not included any.<br>
 Though there is no validation of the input text I have made sure the AddressBook class is looking for the correct attribute in the Contact object.<br>
 I have also not caught any outOfBounds exceptions or incorrect returns that will arise when trying to search for non existent data. <br>
+
+
+<h3>Sorting update - Week 3</h3>
+Added sorting to the address book using comparator
